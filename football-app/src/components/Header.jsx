@@ -1,5 +1,8 @@
+// t nghi nen doi cai nay thanh navbar cho no conventional :))))
+// nhma nnay la dc roi
+
 import React from "react";
-import logo from "../images/logo.png";
+import logo from "../assets/images/logo.png";
 
 const Header = () => {
   return (
