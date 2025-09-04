@@ -1,5 +1,6 @@
-import { ShoppingBagIcon, ShoppingCart } from "lucide-react";
+import { ShoppingBagIcon, ShoppingCart, User } from "lucide-react";
 import logo from "@/assets/images/logo.png";
+import { UserButton } from "@clerk/clerk-react";
 
 export const Navbar = () => {
     return (
@@ -12,6 +13,7 @@ export const Navbar = () => {
                     <a>Home</a>
                     <a>Shop</a>
                     <ShoppingBagIcon />
+                    <User />
                 </div>
             </nav>
         </div>
