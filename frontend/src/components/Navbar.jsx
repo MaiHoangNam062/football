@@ -1,8 +1,11 @@
 import { ShoppingBagIcon, ShoppingCart, User } from "lucide-react";
 import logo from "@/assets/images/logo.png";
-import { UserButton } from "@clerk/clerk-react";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
+import { CurrentProfile } from "../../lib/current-profile";
 
 export const Navbar = () => {
+    const user = CurrentProfile();
+
     return (
         <div>
             <nav className="flex flex-row justify-between mx-5 my-5">
@@ -13,7 +16,7 @@ export const Navbar = () => {
                     <a>Home</a>
                     <a>Shop</a>
                     <ShoppingBagIcon />
-                    <User />
+                    <UserButton />
                 </div>
             </nav>
         </div>
