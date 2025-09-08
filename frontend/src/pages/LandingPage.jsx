@@ -1,5 +1,6 @@
 // ...existing code...
 import { useState } from 'react';
+import { NavbarLanding } from '../components/NavbarLanding';
 
 const categories = [
   { name: 'Kits', img: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&w=600' },
@@ -326,6 +327,7 @@ export const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
+      <NavbarLanding />
       <main>
         <Hero onPrimary={() => { document.getElementById('featured')?.scrollIntoView({ behavior: 'smooth' }); }} />
         <Categories />
