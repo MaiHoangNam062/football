@@ -3,7 +3,7 @@ import logo from "@/assets/images/logo.png";
 import { SignInButton, UserButton } from "@clerk/clerk-react";
 import { CurrentProfile } from "../../lib/current-profile";
 
-export const Navbar = () => {
+export const NavbarShop = () => {
     const user = CurrentProfile();
 
     return (
