@@ -28,42 +28,6 @@ const testimonials = [
   { id: 3, name: 'Chris L.', quote: 'The pro match ball feels incredible. Totally worth the price.', role: 'Youth Coach' },
 ];
 
-const Navbar = ({ cartCount }) => (
-  <header className="fixed top-0 w-full z-40">
-    <div
-      className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between
-      rounded-b-2xl backdrop-blur-xl
-      bg-white/65 border border-white/60 shadow-[0_4px_24px_-4px_rgba(30,41,59,0.12)]
-      supports-[backdrop-filter]:bg-white/55"
-    >
-      <div className="flex items-center gap-2">
-        <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center font-bold text-white shadow-md">FS</div>
-        <span className="font-semibold text-slate-800 tracking-wide">Football Store</span>
-      </div>
-      <nav className="hidden md:flex gap-8 text-sm text-slate-600">
-        <a href="#featured" className="hover:text-slate-900">Featured</a>
-        <a href="#categories" className="hover:text-slate-900">Categories</a>
-        <a href="#best" className="hover:text-slate-900">Best Sellers</a>
-        <a href="#reviews" className="hover:text-slate-900">Reviews</a>
-      </nav>
-      <div className="flex items-center gap-3">
-        <button className="text-sm px-4 py-2 rounded-md text-slate-600 hover:text-slate-900">Login</button>
-        <button className="relative text-sm px-4 py-2 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200">
-          Cart
-          {cartCount > 0 && (
-            <span className="absolute -top-1 -right-1 h-5 min-w-[20px] px-1 rounded-full bg-blue-600 text-[10px] font-semibold text-white flex items-center justify-center">
-              {cartCount}
-            </span>
-          )}
-        </button>
-        <button className="text-sm px-4 py-2 rounded-md bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-medium hover:from-blue-500 hover:to-indigo-600 shadow-md">
-          Sign Up
-        </button>
-      </div>
-    </div>
-  </header>
-);
-
 const Hero = ({ onPrimary }) => (
   <section className="pt-32 pb-24 relative overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(37,99,235,0.15),transparent_65%)]" />
@@ -362,7 +326,6 @@ export const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
-      <Navbar cartCount={cart.length} />
       <main>
         <Hero onPrimary={() => { document.getElementById('featured')?.scrollIntoView({ behavior: 'smooth' }); }} />
         <Categories />
