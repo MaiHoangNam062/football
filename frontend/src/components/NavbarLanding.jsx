@@ -1,3 +1,5 @@
+import { SignInButton, SignUpButton } from '@clerk/clerk-react';
+
 export const NavbarLanding = () => {
     return (
         <header className="fixed top-0 w-full z-40">
@@ -19,11 +21,17 @@ export const NavbarLanding = () => {
                     <a href="#reviews" className="hover:text-slate-900">Reviews</a>
                 </nav>
 
-                <div>
-                    <button className="text-sm px-4 py-2 rounded-md bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-medium hover:from-blue-500 hover:to-indigo-600 shadow-md">
-                    Sign Up
-                    </button>
-                    <button className="text-sm px-4 py-2 rounded-md text-slate-600 hover:text-slate-900">Login</button>
+                <div className='space-x-2'>
+                    <SignInButton mode="modal">
+                        <button className="text-sm px-4 py-2 rounded-md text-slate-600 hover:text-slate-900  bg-zinc-300/20 hover:bg-zinc-200/70 font-semibold cursor-pointer">
+                            Login
+                        </button>
+                    </SignInButton>
+                    <SignUpButton mode="modal">
+                        <button className="text-sm px-4 py-2 rounded-md bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-medium hover:from-blue-500 hover:to-indigo-600 shadow-md cursor-pointer">
+                            Sign Up
+                        </button>
+                    </SignUpButton>
                 </div>
             </div>
         </header>

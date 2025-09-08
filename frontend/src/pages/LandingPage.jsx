@@ -1,5 +1,4 @@
 // ...existing code...
-import { useState } from 'react';
 import { NavbarLanding } from '../components/NavbarLanding';
 
 const categories = [
@@ -315,35 +314,19 @@ const Footer = () => (
 );
 
 export const LandingPage = () => {
-  const [cart, setCart] = useState([]);
-  const [toast, setToast] = useState(null);
-
-  const addToCart = (product) => {
-    setCart(prev => [...prev, product]);
-    setToast(`${product.name} added to cart`);
-    clearTimeout(window.__toastTimer);
-    window.__toastTimer = setTimeout(() => setToast(null), 3000);
-  };
-
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
       <NavbarLanding />
       <main>
         <Hero onPrimary={() => { document.getElementById('featured')?.scrollIntoView({ behavior: 'smooth' }); }} />
         <Categories />
-        <FeaturedProducts onAdd={addToCart} />
+        <FeaturedProducts />
         <PromoBanner />
-        <BestSellers onAdd={addToCart} />
+        <BestSellers />
         <Testimonials />
         <CTASection />
       </main>
       <Footer />
-      {toast && (
-        <div className="fixed bottom-6 right-6 px-4 py-3 rounded-lg bg-white/80 backdrop-blur border border-slate-200 shadow-lg text-sm flex items-center gap-3 animate-fade-in text-slate-800">
-          <span className="h-2 w-2 rounded-full bg-blue-600" />
-            <p>{toast}</p>
-        </div>
-      )}
     </div>
   );
 };
