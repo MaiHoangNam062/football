@@ -9,18 +9,14 @@ import { LandingPage } from './pages/LandingPage.jsx';
 function App() {
   return (
     <>
-      <SignedOut>
-        <LandingPage />
-      </SignedOut>
-      <SignedIn>
-        <Router>
-          <NavbarShop />
-          <Routes>
-            <Route path="*" element={ <Products /> } />
-          </Routes>
-          <Footer />
-        </Router>
-      </SignedIn>
+      <Router>
+        <NavbarShop />
+        <Routes>
+          <Route path="/" element={ <LandingPage /> } />
+          <Route path="*" element={ <Products /> } />
+        </Routes>
+        <Footer />
+      </Router>
     </>
   )
 }
